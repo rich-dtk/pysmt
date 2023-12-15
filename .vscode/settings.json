@@ -1,0 +1,41 @@
+{
+  "explorer.sortOrder": "filesFirst",
+  "python.pythonPath": ".venv/bin/python",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/*.pyc": true,
+    "**/__pycache__": true,
+    //TODO: is below right?
+    "aws_lambda/layers/ai-reasoner/build": true
+  },
+  "python.formatting.provider": "black",
+  "debug.internalConsoleOptions": "neverOpen",
+  "python.linting.mypyEnabled": false,
+  //"python.linting.mypyCategorySeverity.error": "Error",
+  "python.linting.enabled": true,
+  "python.linting.mypyArgs": [
+    "--follow-imports=silent",
+    "--ignore-missing-imports",
+    "--show-column-numbers",
+    "--no-pretty",
+    "--disable-error-code=name-defined",
+    "--disable-error-code=annotation-unchecked",
+    "--disable-error-code=empty-body",
+  ],
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=120"
+  ],
+  "flake8.args": ["--ignore=E711,W503,E501,N805,E402,N802,E712,F541,W601,F403,F405,E266"],
+  "python.linting.pylintEnabled": false,
+  "isort.args": ["--profile", "black"],
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  }
+}
